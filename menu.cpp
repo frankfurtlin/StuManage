@@ -3,67 +3,67 @@
 #include <string.h>
 #include "operate.cpp"
 
-void Menu();					//ÏÔÊ¾¿ªÊ¼²Ëµ¥
-void MenuChoice(char ch);		//²Ëµ¥Ñ¡Ôñ¼°È¨ÏŞµÇÂ½
+void Menu();					//æ˜¾ç¤ºå¼€å§‹èœå•
+void MenuChoice(char ch);		//èœå•é€‰æ‹©åŠæƒé™ç™»é™†
 
-void AdminMenu();				//ÏÔÊ¾¹ÜÀíÔ±²Ëµ¥¼°²Ù×÷
-void AdminMenuChoice();			//¹ÜÀíÔ±²Ëµ¥¼°²Ù×÷
+void AdminMenu();				//æ˜¾ç¤ºç®¡ç†å‘˜èœå•åŠæ“ä½œ
+void AdminMenuChoice();			//ç®¡ç†å‘˜èœå•åŠæ“ä½œ
 
-void TeacherMenu();				//ÏÔÊ¾ÀÏÊ¦²Ëµ¥¼°²Ù×÷
-void TeacherMenuChoice();		//ÀÏÊ¦²Ëµ¥¼°²Ù×÷
+void TeacherMenu();				//æ˜¾ç¤ºè€å¸ˆèœå•åŠæ“ä½œ
+void TeacherMenuChoice();		//è€å¸ˆèœå•åŠæ“ä½œ
 
-void StudentMenu();				//ÏÔÊ¾Ñ§Éú²Ëµ¥¼°²Ù×÷
-void StudentMenuChoice();		//Ñ§Éú²Ëµ¥¼°²Ù×÷
+void StudentMenu();				//æ˜¾ç¤ºå­¦ç”Ÿèœå•åŠæ“ä½œ
+void StudentMenuChoice();		//å­¦ç”Ÿèœå•åŠæ“ä½œ
 
-void Menu()								//¿ªÊ¼²Ëµ¥
+void Menu()								//å¼€å§‹èœå•
 {
 	system("color A0");
-	printf("\n\n\tÑ§Ôº¼¶Ñ§Éú¹ÜÀíÏµÍ³\n\n");
-	printf("\t\t1.ÎÒÊÇ¹ÜÀíÔ±\n\n");
-    printf("\t\t2.ÎÒÊÇ½ÌÊ¦\n\n");
-    printf("\t\t3.ÎÒÊÇÑ§Éú\n\n");  
-    printf("\t\t4.ÍË³öÏµÍ³\n\n"); 	
+	printf("\n\n\tå­¦é™¢çº§å­¦ç”Ÿç®¡ç†ç³»ç»Ÿ\n\n");
+	printf("\t\t1.æˆ‘æ˜¯ç®¡ç†å‘˜\n\n");
+    printf("\t\t2.æˆ‘æ˜¯æ•™å¸ˆ\n\n");
+    printf("\t\t3.æˆ‘æ˜¯å­¦ç”Ÿ\n\n");  
+    printf("\t\t4.é€€å‡ºç³»ç»Ÿ\n\n"); 	
 }
 
-void MenuChoice(char c)					//²Ëµ¥Ñ¡Ôñ¼°È¨ÏŞµÇÂ½
+void MenuChoice(char c)					//èœå•é€‰æ‹©åŠæƒé™ç™»é™†
 {
-	while (getchar() != '\n');		//Çå¿Õ»º´æÇø
-	printf("\tÇëÊäÈë");
+	while (getchar() != '\n');		//æ¸…ç©ºç¼“å­˜åŒº
+	printf("\tè¯·è¾“å…¥");
 
 	int ret;
-	char account[20];		//ÕË»§
-	char password[20];		//ÃÜÂë	
+	char account[20];		//è´¦æˆ·
+	char password[20];		//å¯†ç 	
 
 	switch(c)
 	{
-		case '1':										//¹ÜÀíÔ±µÇÂ½
+		case '1':										//ç®¡ç†å‘˜ç™»é™†
 		{
-			char stdacc[20];		//ÉèÖÃ±ê×¼ÕË»§ÓëÃÜÂë
+			char stdacc[20];		//è®¾ç½®æ ‡å‡†è´¦æˆ·ä¸å¯†ç 
 			char stdpass[20];
-			strcpy_s(stdacc, "linshujing");
+			strcpy_s(stdacc, "Frankfurt");
 			strcpy_s(stdpass, "password");
 
-			printf(" ¹ÜÀíÔ±ÕËºÅ£º\n");
+			printf(" ç®¡ç†å‘˜è´¦å·ï¼š\n");
 			gets_s(account,20);
 			while((ret= strcmp(account, stdacc))!= 0)
 			{
-				printf("Ã»ÓĞ´Ë¹ÜÀíÔ±ÕËºÅ£¡±§Ç¸£¡ÇëÖØĞÂÊäÈë£¡\n");
+				printf("æ²¡æœ‰æ­¤ç®¡ç†å‘˜è´¦å·ï¼æŠ±æ­‰ï¼è¯·é‡æ–°è¾“å…¥ï¼\n");
 				gets_s(account);
 			}
-			printf("\t             ÃÜÂë£º\n");
+			printf("\t             å¯†ç ï¼š\n");
 			gets_s(password,20);
 			if((ret= strcmp(password, stdpass))!= 0)
 			{
-				printf("¹ÜÀíÔ±ÃÜÂëÊäÈë´íÎó£¡ÇëÖØĞÂÊäÈë£¡\n");
+				printf("ç®¡ç†å‘˜å¯†ç è¾“å…¥é”™è¯¯ï¼è¯·é‡æ–°è¾“å…¥ï¼\n");
 				gets_s(password);
 			}
 			AdminMenuChoice();
 			break;
 		}
-		case '2':									//ÀÏÊ¦µÇÂ½
+		case '2':									//è€å¸ˆç™»é™†
 		{
 			int i, num = 0;
-			//¶ÁÈ¡ÎÄ¼ş
+			//è¯»å–æ–‡ä»¶
 			FILE *fp;
 			fopen_s(&fp, "password/teachers.data", "r");
 			char stdacc[20][20];
@@ -75,9 +75,9 @@ void MenuChoice(char c)					//²Ëµ¥Ñ¡Ôñ¼°È¨ÏŞµÇÂ½
 				fscanf_s(fp, "%s\n", stdpass[num], 20);
 			}
 			bool flag = true;
-			printf(" ½ÌÊ¦ÕËºÅ£º\n");
+			printf(" æ•™å¸ˆè´¦å·ï¼š\n");
 			gets_s(account,20);
-			//¶ÔÕÊºÅ½øĞĞÅĞ¶Ï
+			//å¯¹å¸å·è¿›è¡Œåˆ¤æ–­
 			do {
 				for (i = 1; i <= num; i++)
 				{
@@ -89,25 +89,25 @@ void MenuChoice(char c)					//²Ëµ¥Ñ¡Ôñ¼°È¨ÏŞµÇÂ½
 				}
 				if (i == num + 1)
 				{
-					printf("Ã»ÓĞ´ËÀÏÊ¦ÕËºÅ£¡±§Ç¸£¡ÇëÖØĞÂÊäÈë£¡\n");
+					printf("æ²¡æœ‰æ­¤è€å¸ˆè´¦å·ï¼æŠ±æ­‰ï¼è¯·é‡æ–°è¾“å…¥ï¼\n");
 					gets_s(account);
 				}
 			} while (flag);
 
-			printf("\t           ÃÜÂë£º\n");
+			printf("\t           å¯†ç ï¼š\n");
 			gets_s(password,20);
 			while (strcmp(password, stdpass[i]))
 			{
-				printf("¸ÃÀÏÊ¦ÕËºÅÃÜÂëÊäÈë´íÎó£¡ÇëÖØĞÂÊäÈë£¡\n");
+				printf("è¯¥è€å¸ˆè´¦å·å¯†ç è¾“å…¥é”™è¯¯ï¼è¯·é‡æ–°è¾“å…¥ï¼\n");
 				gets_s(password);
 			}
 			TeacherMenuChoice();
 			break;
 		}
-		case '3':									//Ñ§ÉúµÇÂ½
+		case '3':									//å­¦ç”Ÿç™»é™†
 		{
 			int i, num = 0;
-			//¶ÁÈ¡ÎÄ¼ş
+			//è¯»å–æ–‡ä»¶
 			FILE *fp;
 			fopen_s(&fp, "password/students.data", "r");
 			char stdacc[20][20];
@@ -119,9 +119,9 @@ void MenuChoice(char c)					//²Ëµ¥Ñ¡Ôñ¼°È¨ÏŞµÇÂ½
 				fscanf_s(fp, "%s\n", stdpass[num], 20);
 			}
 			bool flag = true;
-			printf(" Ñ§ÉúÕËºÅ£º\n");
+			printf(" å­¦ç”Ÿè´¦å·ï¼š\n");
 			gets_s(account, 20);
-			//¶ÔÕÊºÅ½øĞĞÅĞ¶Ï
+			//å¯¹å¸å·è¿›è¡Œåˆ¤æ–­
 			do {
 				for (i = 1; i <= num; i++)
 				{
@@ -133,16 +133,16 @@ void MenuChoice(char c)					//²Ëµ¥Ñ¡Ôñ¼°È¨ÏŞµÇÂ½
 				}
 				if (i == num + 1)
 				{
-					printf("Ã»ÓĞ´ËÑ§ÉúÕËºÅ£¡±§Ç¸£¡ÇëÖØĞÂÊäÈë£¡\n");
+					printf("æ²¡æœ‰æ­¤å­¦ç”Ÿè´¦å·ï¼æŠ±æ­‰ï¼è¯·é‡æ–°è¾“å…¥ï¼\n");
 					gets_s(account);
 				}
 			} while (flag);
 
-			printf("\t           ÃÜÂë£º\n");
+			printf("\t           å¯†ç ï¼š\n");
 			gets_s(password, 20);
 			while (strcmp(password, stdpass[i]))
 			{
-				printf("¸ÃÑ§ÉúÕËºÅÃÜÂëÊäÈë´íÎó£¡ÇëÖØĞÂÊäÈë£¡\n");
+				printf("è¯¥å­¦ç”Ÿè´¦å·å¯†ç è¾“å…¥é”™è¯¯ï¼è¯·é‡æ–°è¾“å…¥ï¼\n");
 				gets_s(password);
 			}
 			StudentMenuChoice();
@@ -154,30 +154,30 @@ void MenuChoice(char c)					//²Ëµ¥Ñ¡Ôñ¼°È¨ÏŞµÇÂ½
 	while ((getchar()) != '\n');
 }
 
-void AdminMenu()							//ÏÔÊ¾¹ÜÀíÔ±²Ëµ¥¼°²Ù×÷
+void AdminMenu()							//æ˜¾ç¤ºç®¡ç†å‘˜èœå•åŠæ“ä½œ
 {
 	system("cls");
-	printf("\n\n\t¹ÜÀíÔ±²Ù×÷²Ëµ¥\n\n");
-	printf("\t\t1.Ìí¼ÓÑ§ÉúĞÅÏ¢\n\n");
-    printf("\t\t2.É¾³ıÑ§ÉúĞÅÏ¢\n\n");
-    printf("\t\t3.ÎªÖ¸¶¨Ñ§ÉúÌí¼ÓÖ¸¶¨µÄ¿Î³Ì\n\n");  
-    printf("\t\t4.É¾³ıÖ¸¶¨Ñ§ÉúµÄÖ¸¶¨¿Î³Ì\n\n"); 
-    printf("\t\t5.ÎªËùÓĞÑ§ÉúÌí¼ÓÖ¸¶¨¿Î³Ì\n\n"); 
-    printf("\t\t6.É¾³ıËùÓĞÑ§ÉúµÄÖ¸¶¨¿Î³Ì\n\n"); 
-	printf("\t\t7.·µ»Ø\n\n"); 
+	printf("\n\n\tç®¡ç†å‘˜æ“ä½œèœå•\n\n");
+	printf("\t\t1.æ·»åŠ å­¦ç”Ÿä¿¡æ¯\n\n");
+    printf("\t\t2.åˆ é™¤å­¦ç”Ÿä¿¡æ¯\n\n");
+    printf("\t\t3.ä¸ºæŒ‡å®šå­¦ç”Ÿæ·»åŠ æŒ‡å®šçš„è¯¾ç¨‹\n\n");  
+    printf("\t\t4.åˆ é™¤æŒ‡å®šå­¦ç”Ÿçš„æŒ‡å®šè¯¾ç¨‹\n\n"); 
+    printf("\t\t5.ä¸ºæ‰€æœ‰å­¦ç”Ÿæ·»åŠ æŒ‡å®šè¯¾ç¨‹\n\n"); 
+    printf("\t\t6.åˆ é™¤æ‰€æœ‰å­¦ç”Ÿçš„æŒ‡å®šè¯¾ç¨‹\n\n"); 
+	printf("\t\t7.è¿”å›\n\n"); 
 }
 
-void AdminMenuChoice()							//¹ÜÀíÔ±²Ëµ¥¼°²Ù×÷
+void AdminMenuChoice()							//ç®¡ç†å‘˜èœå•åŠæ“ä½œ
 {
 	char ch;
 	while(1)
 	{
 		AdminMenu();
-		printf("ÇëÑ¡Ôñ£º ");
+		printf("è¯·é€‰æ‹©ï¼š ");
 		ch= getchar();
 		while(ch!= '1' && ch!= '2' && ch!= '3' && ch!= '4' && ch!= '5'&& ch != '6' && ch != '7')
 		{
-			printf("ÊäÈë´íÎó£¡£¡ÇëÔÙ´ÎÊäÈë£¡\n");
+			printf("è¾“å…¥é”™è¯¯ï¼ï¼è¯·å†æ¬¡è¾“å…¥ï¼\n");
 			ch= getchar();
 		}
 		if(ch == '7')
@@ -186,27 +186,27 @@ void AdminMenuChoice()							//¹ÜÀíÔ±²Ëµ¥¼°²Ù×÷
 	}
 }
 
-void TeacherMenu()						//ÏÔÊ¾ÀÏÊ¦²Ëµ¥¼°²Ù×÷
+void TeacherMenu()						//æ˜¾ç¤ºè€å¸ˆèœå•åŠæ“ä½œ
 {
 	system("cls");
-	printf("\n\n\t½ÌÊ¦²Ù×÷²Ëµ¥\n\n");
-	printf("\t\t1.ÎªÄ³¸öÑ§ÉúÄ³ÃÅ¿Î¸ø·Ö\n\n");
-    printf("\t\t2.²é¿´Ä³ÃÅ¿Î¼°¸ñÂÊ£¬Æ½¾ù·Ö\n\n");
-    printf("\t\t3.²é¿´Ä³ÃÅ¿ÎËùÓĞÑ§Éú³É¼¨\n\n");  
-    printf("\t\t4.·µ»Ø\n\n"); 
+	printf("\n\n\tæ•™å¸ˆæ“ä½œèœå•\n\n");
+	printf("\t\t1.ä¸ºæŸä¸ªå­¦ç”ŸæŸé—¨è¯¾ç»™åˆ†\n\n");
+    printf("\t\t2.æŸ¥çœ‹æŸé—¨è¯¾åŠæ ¼ç‡ï¼Œå¹³å‡åˆ†\n\n");
+    printf("\t\t3.æŸ¥çœ‹æŸé—¨è¯¾æ‰€æœ‰å­¦ç”Ÿæˆç»©\n\n");  
+    printf("\t\t4.è¿”å›\n\n"); 
 }
 
-void TeacherMenuChoice()						//ÀÏÊ¦²Ëµ¥¼°²Ù×÷
+void TeacherMenuChoice()						//è€å¸ˆèœå•åŠæ“ä½œ
 {
 	char ch;
 	while(1)
 	{
 		TeacherMenu();
-		printf("ÇëÑ¡Ôñ£º ");
+		printf("è¯·é€‰æ‹©ï¼š ");
 		ch= getchar();
 		while(ch!= '1' && ch!= '2' && ch!= '3' && ch!= '4')
 		{
-			printf("ÊäÈë´íÎó£¡£¡ÇëÔÙ´ÎÊäÈë£¡\n");
+			printf("è¾“å…¥é”™è¯¯ï¼ï¼è¯·å†æ¬¡è¾“å…¥ï¼\n");
 			ch= getchar();
 		}
 		if(ch == '4')
@@ -215,26 +215,26 @@ void TeacherMenuChoice()						//ÀÏÊ¦²Ëµ¥¼°²Ù×÷
 	}
 }
 
-void StudentMenu()						//ÏÔÊ¾Ñ§Éú²Ëµ¥¼°²Ù×÷
+void StudentMenu()						//æ˜¾ç¤ºå­¦ç”Ÿèœå•åŠæ“ä½œ
 {
 	system("cls");
-	printf("\n\n\tÑ§Éú²Ù×÷²Ëµ¥\n\n");
-	printf("\t\t1.²é¿´ÎÒµÄĞÅÏ¢\n\n");
-    printf("\t\t2.·µ»Ø\n\n");
+	printf("\n\n\tå­¦ç”Ÿæ“ä½œèœå•\n\n");
+	printf("\t\t1.æŸ¥çœ‹æˆ‘çš„ä¿¡æ¯\n\n");
+    printf("\t\t2.è¿”å›\n\n");
 }
 
-void StudentMenuChoice()						//Ñ§Éú²Ëµ¥¼°²Ù×÷
+void StudentMenuChoice()						//å­¦ç”Ÿèœå•åŠæ“ä½œ
 {
 	char ch;
 	while(1)
 	{
 		StudentMenu();
-		printf("ÇëÑ¡Ôñ£º ");
+		printf("è¯·é€‰æ‹©ï¼š ");
 		ch= getchar();
 		while(ch!= '1' && ch!= '2')
 		{
 			fflush(stdin);
-			printf("ÊäÈë´íÎó£¡£¡ÇëÔÙ´ÎÊäÈë£¡\n");
+			printf("è¾“å…¥é”™è¯¯ï¼ï¼è¯·å†æ¬¡è¾“å…¥ï¼\n");
 			ch= getchar();
 		}
 		if(ch == '2')
